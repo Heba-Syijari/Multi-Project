@@ -1,0 +1,24 @@
+modules:
+  jira:customFieldType:
+    - key: multi-project-customfield
+      name: Multi Project Customfield
+      description: Custom field type.
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-countries-icon.svg
+      type: object
+      formatter:
+        expression: '`${value.projects}`'
+      readOnly: false
+      function: main_r
+      edit:
+        function: edit
+  function:
+    - key: main_r
+      handler: index.runView
+    - key: edit
+      handler: index.runEdit
+app:
+  id: ari:cloud:ecosystem::app/4004fd86-a2e6-47a8-9728-9a3fd0f8c336
+permissions:
+  scopes:
+    - manage:jira-configuration
+    - read:custom-field-contextual-configuration:jira
