@@ -5,7 +5,7 @@ interface ViewComponentsText {
 }
 
 export const viewComponentText: ViewComponentsText = {
-  value: "Total projects:",
+  value: "projects: ",
   noValues: "No values provided",
   noConfiguration: "No configuration found !"
 };

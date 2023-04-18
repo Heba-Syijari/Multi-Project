@@ -5,7 +5,8 @@ import ForgeUI, {
   Select,
   Option,
   useState,
-  // Text,
+  //Form,
+  // Text
 } from '@forge/ui';
 import {
   getCustomFieldContext,
@@ -50,7 +51,7 @@ export const Edit = () => {
             // defaultSelected={userSummCurrency === e}
             key={e.key}
             label={e.name}
-            value={e.name}
+            value={`${e.name}`}
           />
         ))}
       </Select>

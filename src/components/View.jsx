@@ -10,7 +10,7 @@ import api from '@forge/api';
 import { viewComponentText } from '../data/textFields';
 import { getCustomFieldContext, getAllProject } from '../utils/utils';
 // import { DEFAULT_CONTEXT_CONFIG } from "../data/data";
-
+let i = -1;
 export const View = () => {
   const {
     extensionContext: { fieldValue, fieldId },
@@ -30,11 +30,24 @@ export const View = () => {
       <Fragment>
         {projects ? (
           <Fragment>
-            <Text>
-              {value} {projects}
-            </Text>
+            <Text>{value}</Text>
             {projectFieldContext.map((e) => (
-              <Image src={e.avatarUrls['16x16']} alt="avatar" size="xsmall" />
+              <Fragment>
+                {projects.map((p) =>
+                  p == e.name ? (
+                    <Fragment>
+                      <Image
+                        src={e.avatarUrls['16x16']}
+                        alt="avatar"
+                        size="xsmall"
+                      />
+                      <Text>{`${p} \n`}</Text>
+                    </Fragment>
+                  ) : (
+                    <Text></Text>
+                  )
+                )}
+              </Fragment>
             ))}
           </Fragment>
         ) : (
