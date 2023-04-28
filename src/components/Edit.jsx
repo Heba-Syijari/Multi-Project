@@ -6,12 +6,11 @@ import ForgeUI, {
   Option,
   useState,
   //Form,
-  // Text
+  Text,
 } from '@forge/ui';
 import {
   getCustomFieldContext,
   getAllProject,
-  //   setOutcomeProps,
 } from './../utils/utils';
 // import {
 //   DEFAULT_CONTEXT_CONFIG,
@@ -59,6 +58,7 @@ export const Edit = () => {
         <Image src={e.avatarUrls['16x16']} alt="avatar" size="xsmall" />
       ))} */}
     </CustomFieldEdit>
+
     /* <select name="projects" multiple>
         {projectFieldContext.map((e) => (
           <option key={e.key} value={e.name}>

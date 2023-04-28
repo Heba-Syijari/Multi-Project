@@ -1,6 +1,7 @@
 modules:
   jira:customFieldType:
     - key: multi-project-customfield
+      title: Customfield
       name: Multi Project Customfield
       description: Custom field type.
       icon: https://developer.atlassian.com/platform/forge/images/icons/issue-countries-icon.svg
@@ -11,11 +12,21 @@ modules:
       function: main_r
       edit:
         function: edit
+      contextConfig:
+        function: configureContext
+  jira:adminPage:
+    - key: adminpage-kit-ui-hello-world-admin-page
+      function: main
+      title: Jira projects
   function:
     - key: main_r
       handler: index.runView
     - key: edit
       handler: index.runEdit
+    - key: configureContext
+      handler: index.runContextConfig
+    - key: main
+      handler: index.run
 app:
   id: ari:cloud:ecosystem::app/4004fd86-a2e6-47a8-9728-9a3fd0f8c336
 permissions:
@@ -34,3 +45,9 @@ permissions:
     - read:project-category:jira
     - read:project-version:jira
     - read:project.component:jira
+  content:
+    styles:
+      - 'unsafe-inline'
+  external:
+    images:
+      - '*.giphy.com'
